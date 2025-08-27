@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Weather App</title>
+</head>
+<body class="weather-{{ weather_class }}">
+    <div class="container">
+        <div class="sidebar">
+            <form method="POST" class="search-form">
+                {% csrf_token %}
+                <div class="search-box">
+                    <i class="bi bi-cloud-fog search-icon"></i>
+                    <input type="text" name="city" placeholder="Enter city name" value="{{ location }}" class="search-input" required>
+                    <button type="submit" class="search-btn">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
+            
+            {% if error %}
+                <div class="error-message">{{ error }}</div>
+            {% endif %}
+            
+            <div class="current-weather">
+                <div class="temperature">{{ current_temp }}°C</div>
+                <div class="feels-like">Feels like: {{ feels_like }}°C</div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="value">{{ humidity }}%</span>
+                        <span class="label">humidity</span>
+                    </div>
+                    <div class="stat">
+                        <span class="value">{{ clouds }}%</span>
+                        <span class="label">clouds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h4>Weather Forecast</h4>
+                <h1>{{ description|title }}</h1>
+                <div class="location">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>{{ city }}, {{ country }}</span>
+                </div>
+            </div>
+            
+            <div class="weather-grid">
+                <div class="weather-item">
+                    <h3>Temperature Range</h3>
+                    <p>Min: {{ temp_min }}°C | Max: {{ temp_max }}°C</p>
+                </div>
+                <div class="weather-item">
+                    <h3>Wind Speed</h3>
+                    <p>{{ wind_speed }} m/s</p>
+                </div>
+                <div class="weather-item">
+                    <h3>Pressure</h3>
+                    <p>{{ pressure }} hPa</p>
+                </div>
+                <div class="weather-item">
+                    <h3>Rain Prediction</h3>
+                    <p>{{ rain_prediction }}</p>
+                </div>
+            </div>
+            
+            {% if future_temps %}
+            <div class="forecasts">
+                <div class="forecast-section">
+                    <h3>5-Hour Temperature Forecast</h3>
+                    <div class="forecast-grid">
+                        {% for time, temp in future_temps %}
+                        <div class="forecast-item">
+                            <div class="time">{{ time }}</div>
+                            <div class="value">{{ temp }}°C</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="forecast-section">
+                    <h3>5-Hour Humidity Forecast</h3>
+                    <div class="forecast-grid">
+                        {% for time, humidity in future_humidity %}
+                        <div class="forecast-item">
+                            <div class="time">{{ time }}</div>
+                            <div class="value">{{ humidity }}%</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
