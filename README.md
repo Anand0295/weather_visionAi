@@ -11,14 +11,12 @@
 
 ## 🎥 Live Demo
 
-https://github.com/user-attachments/assets/your-video-id
-
 *Full application walkthrough showcasing dynamic backgrounds, ML predictions, and responsive design*
 
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="Screenshot 2025-08-27 at 10.04.07PM.png" alt="WeatherVision AI Dashboard" width="800"/>
+  <img src="Screenshot 2025-08-27 at 10.04.07 PM.jpg" alt="WeatherVision AI Dashboard" width="800"/>
   <p><em>Dynamic weather visualization with real-time data and ML-powered forecasts</em></p>
 </div>
 
