@@ -9,9 +9,7 @@
 
 > **Enterprise-grade weather intelligence platform combining real-time meteorological data with advanced machine learning predictions and immersive visual experiences.**
 
-## 🎥 Live Demo
 
-*Full application walkthrough showcasing dynamic backgrounds, ML predictions, and responsive design*
 
 ## 📸 Screenshots
 
