@@ -10,14 +10,6 @@
 > **Enterprise-grade weather intelligence platform combining real-time meteorological data with advanced machine learning predictions and immersive visual experiences.**
 
 
-
-## 📸 Screenshots
-
-<div align="center">
-  <img src="Screenshot 2025-08-27 at 10.04.07 PM.jpg" alt="WeatherVision AI Dashboard" width="800"/>
-  <p><em>Dynamic weather visualization with real-time data and ML-powered forecasts</em></p>
-</div>
-
 ## 🚀 Key Features
 
 ### 🧠 **AI-Powered Intelligence**
